@@ -47,9 +47,9 @@ var source = new Schema({
 source.static({
   list: async function(params) {
     params = params ? params : { limit: 50, skip: 0 }
-    var undenfined;
+    var _undefined;
     return await this.find({
-        deprecated: undenfined
+        deprecated: _undefined
       })
       .limit(params.limit)
       .skip(params.skip)
