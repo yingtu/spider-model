@@ -1,6 +1,8 @@
 {
   "name": "spider-model",
+
   "version": "1.0.4",
+
   "description": "",
   "main": "./models/index.js",
   "scripts": {
