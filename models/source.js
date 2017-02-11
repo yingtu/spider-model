@@ -30,6 +30,9 @@ var source = new Schema({
     type: ObjectId,
     ref: 'platform'
   },
+  deprecated: {
+    type: Boolean
+  },
   desc: String,
   createDateTime: {
     type: Date,
@@ -44,7 +47,10 @@ var source = new Schema({
 source.static({
   list: async function(params) {
     params = params ? params : { limit: 50, skip: 0 }
-    return await this.find()
+    var undenfined;
+    return await this.find({
+        deprecated: undenfined
+      })
       .limit(params.limit)
       .skip(params.skip)
       .sort({ _id: -1 })
