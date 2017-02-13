@@ -2,6 +2,7 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema,
   ObjectId = Schema.Types.ObjectId,
   Mixed = Schema.Types.Mixed;
+mongoose.Promise = global.Promise;
 
 var pageInfo = new Schema({
   pageId: { type: String, required: true },
