@@ -38,6 +38,9 @@ var source = new Schema({
     type: Date,
     default: Date.now
   },
+  creator: {
+    type: String,
+  },
   updateDateTime: {
     type: Date,
     default: Date.now
