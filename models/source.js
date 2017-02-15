@@ -52,7 +52,7 @@ source.static({
     params = params ? params : { limit: 50, skip: 0 }
     var where = params.where ? params.where : {};
     var _undefined;
-    return await this.find(Object.assign({
+    var list = await this.find(Object.assign({
         deprecated: _undefined
       }, where))
       .limit(params.limit)
