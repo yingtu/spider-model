@@ -50,14 +50,20 @@ var source = new Schema({
 source.static({
   list: async function(params) {
     params = params ? params : { limit: 50, skip: 0 }
+    var where = params.where ? params.where : {};
     var _undefined;
-    return await this.find({
+    return await this.find(Object.assign({
         deprecated: _undefined
-      })
+      }, where))
       .limit(params.limit)
       .skip(params.skip)
       .sort({ _id: -1 })
       .populate('platform', { _id: 1, siteName: 1, queryModel: 1 })
+    var count = await this.count();
+    return {
+      list: list,
+      total: count,
+    }
   }
 });
 
