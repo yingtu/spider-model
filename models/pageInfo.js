@@ -26,6 +26,9 @@ var pageInfo = new Schema({
     type: String,
     required: true
   },
+  tags: {
+    type: Array
+  },
   duration: String,
   desc: String,
   playCount: String, //播放数
