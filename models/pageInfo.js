@@ -29,6 +29,7 @@ var pageInfo = new Schema({
   tags: {
     type: Array
   },
+  shareCount: String,
   duration: String,
   desc: String,
   playCount: String, //播放数
