@@ -1,4 +1,10 @@
+var qq_rex = /^http:\/\/v\.qq\.com\/vplus\/\S+\/foldervideos\/\S+/;
+var qq_rex1 = /^http:\/\/v\.qq\.com\/vplus\/\S+\/videos/;
+
 function validUrl(v) {
+  if (v.indexOf('v.qq.com') != -1 && qq_rex.test(v) == false && qq_rex1.test(v) == false) { //如果 是腾讯视频只支持目前这两种url
+    return false
+  }
   return v.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/)
 }
 var mongoose = require('mongoose'),
@@ -10,13 +16,15 @@ var source = new Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
+  },
+  sourceId: {
+    type: String,
   },
   url: {
     type: String,
     required: true,
-    set(v) {
-      return v.trim().toLowerCase()
-    },
+    unique: true,
     validate: [
       validUrl,
       'Invalid source url'
@@ -38,12 +46,22 @@ var source = new Schema({
     type: Date,
     default: Date.now
   },
+  crawlOnceLimit: {
+    type: Number,
+    default: 100
+  },
   creator: {
     type: String,
+  },
+  author: {
+    type: String
   },
   updateDateTime: {
     type: Date,
     default: Date.now
+  },
+  beary_chat: {
+    type: String
   }
 });
 

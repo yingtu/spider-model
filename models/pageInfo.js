@@ -6,6 +6,10 @@ mongoose.Promise = global.Promise;
 
 var pageInfo = new Schema({
   pageId: { type: String, required: true },
+  isPub: {
+    type: Boolean,
+    default: false
+  },
   title: {
     type: String,
     required: true,
@@ -28,6 +32,9 @@ var pageInfo = new Schema({
   },
   tags: {
     type: Array
+  },
+  author: {
+    type: String
   },
   shareCount: String,
   duration: String,
