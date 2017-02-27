@@ -1,10 +1,4 @@
-var qq_rex = /^http:\/\/v\.qq\.com\/vplus\/\S+\/foldervideos\/\S+/;
-var qq_rex1 = /^http:\/\/v\.qq\.com\/vplus\/\S+\/videos/;
-
 function validUrl(v) {
-  if (v.indexOf('v.qq.com') != -1 && qq_rex.test(v) == false && qq_rex1.test(v) == false) { //如果 是腾讯视频只支持目前这两种url
-    return false
-  }
   return v.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/)
 }
 var mongoose = require('mongoose'),

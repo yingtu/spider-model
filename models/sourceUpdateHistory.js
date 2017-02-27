@@ -9,6 +9,10 @@ var sourceUpdateHistory = new Schema({
     type: Boolean,
     default: false
   },
+  isPub: {
+    type: Boolean,
+    default: false
+  },
   updateCount: {
     type: Number,
   },
