@@ -30,7 +30,8 @@ var source = new Schema({
   },
   platform: {
     type: ObjectId,
-    ref: 'platform'
+    ref: 'platform',
+    required: true,
   },
   deprecated: {
     type: Boolean
