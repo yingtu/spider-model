@@ -11,11 +11,11 @@ var pageTrend = new Schema({
     ref: 'pageInfo'
   },
 
-  shareCount: String,
-  playCount: String, //播放数
-  commentCount: String, //评论数
-  dynamicCommentCount: String, //弹幕数量
-  favoriteCount: String, //收藏数量
+  shareCount: Number,
+  playCount: Number, //播放数
+  commentCount: Number, //评论数
+  dynamicCommentCount: Number, //弹幕数量
+  favoriteCount: Number, //收藏数量
   createDateTime: {
     type: Date,
     default: Date.now
