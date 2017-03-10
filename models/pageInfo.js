@@ -70,5 +70,5 @@ pageInfo.static({
     }
   }
 });
-
+pageInfo.index({ playCount: 1, commentCount: 1, dynamicCommentCount: 1, favoriteCount: 1, shareCount: 1, pubTime: 1 })
 module.exports = mongoose.model('pageInfo', pageInfo);

@@ -58,5 +58,6 @@ pageTrend.static({
     return ['shareCount', 'playCount', 'commentCount', 'dynamicCommentCount', 'favoriteCount']
   }
 });
+pageTrend.index({ createDateTime: 1 })
 
 module.exports = mongoose.model('pageTrend', pageTrend);
