@@ -14,6 +14,7 @@ var source = new Schema({
   },
   sourceId: {
     type: String,
+    unique: true
   },
   url: {
     type: String,
