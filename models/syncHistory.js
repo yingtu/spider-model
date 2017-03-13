@@ -8,6 +8,10 @@ var syncHistory = new Schema({
     type: String,
     required: true,
   },
+  lastSourceCreateTime: {
+    required: true,
+    type: Date
+  },
   createDateTime: {
     type: Date,
     default: Date.now
